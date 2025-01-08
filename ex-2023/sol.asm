@@ -23,22 +23,22 @@
 # Here the data of this program starts
 #-----------------------------------------------------------
 .data 0x10000000
-arr_size: .word 0x0000000a # array size = 10
-element: .word 0x0000000d # element to search
-index: .word 0xffffffff # index of element in the array
-strt_adrs: .word 0x10000100 # start address of array
+    arr_size: .word 0x0000000a # array size = 10
+    element: .word 0x0000000d # element to search
+    index: .word 0xffffffff # index of element in the array
+    strt_adrs: .word 0x10000100 # start address of array
 .data 0x10000100 # put the next data block
-# starting from 0x10000100
-.word 0x00000001
-.word 0x00000005
-.word 0x00000007
-.word 0x00000009
-.word 0x0000000b
-.word 0x0000000d
-.word 0x00000010
-.word 0x00004000
-.word 0x00050000
-.word 0x00700000
+    # starting from 0x10000100
+    .word 0x00000001
+    .word 0x00000005
+    .word 0x00000007
+    .word 0x00000009
+    .word 0x0000000b
+    .word 0x0000000d
+    .word 0x00000010
+    .word 0x00004000
+    .word 0x00050000
+    .word 0x00700000
 #-----------------------------------------------------------
 #
 # Here is the program itself:
@@ -46,11 +46,10 @@ strt_adrs: .word 0x10000100 # start address of array
 .text 0x0400000
 #-----------------------------------------------------------
 main:
-lui $gp, 0x1000
-# $gp points at 0x10000000
+lui $gp, 0x1000 # $gp points at 0x10000000
 lw $s0, 0($gp) # $s0 = array_size value
 lw $s1, 12($gp) # $s1 = strt_adrs value
-# $s1 will be our ptr from start
+                # $s1 will be our ptr from start
 lw $s2, 4($gp) # $s2 = element to search
 add $s3, $0, $0 # $s3 = first index
 lw $s4, 0($s1) # first element
