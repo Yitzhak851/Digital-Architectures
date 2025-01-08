@@ -1,0 +1,22 @@
+Starting from address 0x10000100 resides an array of integers. The size of the array is 
+written in address 0x10000000. You should sum up all the elements that have even 
+values in the array and write the result to address 0x10000004. 
+
+
+Starting from address 0x10000100 resides an array of integers. 
+The size of the array is written in address 0x10000000. 
+You should sum up all the elements that have even values in the array 
+and write the result to address 0x10000004.
+
+This is a programming task 
+where the goal is to process an array stored in memory 
+and calculate the sum of its even elements. 
+The instructions specify:
+
+1.	Array Location and Size:
+o	The array starts at memory address 0x10000100.
+o	The size of the array (num_of_val) is stored at memory address 0x10000000.
+2.	Output:
+o	Sum of all even values in the array 
+o	Written them to memory address 0x10000004.
+
