@@ -5,7 +5,7 @@
 #-----------------------------------------------------------
 # Data block
 .data 0x10000000
-arr_size:   .word 0x0000000a   # Array size = 10
+arr_size:   .word 0x0000000a   # Array size = 4
 sum_addr:   .word 0x00000000   # Address to store the sum of even elements
 strt_adrs:  .word 0x10000100   # Start address of the array
 .data 0x10000100
@@ -20,6 +20,7 @@ strt_adrs:  .word 0x10000100   # Start address of the array
             .word 0x00004000
             .word 0x00050000
             .word 0x00700000
+
 #-----------------------------------------------------------
 # Code block
 .text 0x00400000
