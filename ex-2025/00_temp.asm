@@ -1,17 +1,29 @@
-# Data block
-.data 0x10000000
-    start_address:        .word 0x10000100   # Starting from address 0x10000100
-    size_of_array:        .word 0x00000000   # The size of the array written in address 0x1
-    sum_of_even_elements: .word 0x00000000   # Address to store the sum of even elements
+#-----------------------------------------------------------
+# This program sums all even elements in an array
+# starting at the address written in "strt_adrs"
+# and writes the result to "sum_addr"
+#-----------------------------------------------------------
+
+# Data block - Global-pointer (gb)
+.data 0x10000100
+start_adrs:             .word 0x10000100 # Starting from address 0x10000100
+arr_size_adrs:          .word 0x10000000 # The size of the array written in address 0x1
+sum_even_valus_adrs:    .word 0x10000004 # Address to store the sum of even elements
 
 # Code block
 .text 0x00400000
-
 main:
 # Load data pointers
+    addi $t0, $0, 1
+    sw $t0, 0x10000100($zero)
+    addi $t0, $0, 2
+    sw $t0, 0x10000104($zero)
+    addi $t0, $0, 3
+    sw $t0, 0x10000108($zero)
+
     lui $gp, 0x1000         # $gp points at 0x10000000
-    lw $s0, 0($gp)          # $s0 = arr_size (number of elements in the array)
-    lw $s1, 8($gp)          # $s1 = strt_adrs (start address of the array)
+    lw $s0, 0($gp)          # $s0 = sizes_of_array (number of elements in the array)
+    lw $s1, 8($gp)          # $s1 = starts_address (start address of the array)
     add $s2, $0, $0         # $s2 = sum (initialize sum to 0)
     add $t0, $0, $0         # $t0 = index (loop counter)
 loop:
