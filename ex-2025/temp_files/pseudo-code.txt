@@ -1,7 +1,5 @@
-Here’s the pseudocode and the assembly solution for the given problem.
-
+Here’s the pseudocode that i used in my assembly solution for the given problem.
 #### ------- Pseudocode ------- ####
-
     1. Read the size of the array from address 0x10000000.
     2. Initialize a variable `sum` to 0.
     3. Set a pointer to the starting address of the array, 0x10000100.

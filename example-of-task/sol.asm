@@ -27,6 +27,8 @@
     element: .word 0x0000000d # element to search
     index: .word 0xffffffff # index of element in the array
     strt_adrs: .word 0x10000100 # start address of array
+
+
 .data 0x10000100 # put the next data block
     # starting from 0x10000100
     .word 0x00000001
