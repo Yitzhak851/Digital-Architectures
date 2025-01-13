@@ -1,4 +1,4 @@
-# Digital-Architectures
+# Digital-Architectures #
 In the course we first discuss Boolean algebra and the implementation of Boolean equations using gates. <br>
 Then we use gates to build the basic building blocks of a digital computer, <br>
 e.g., Multiplexors, Decoders, Arithmetic Logic Unit, Registers, Counters, State-Machines etc. <br>

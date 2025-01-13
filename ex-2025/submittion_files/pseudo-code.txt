@@ -1,0 +1,14 @@
+Here’s the pseudocode and the assembly solution for the given problem.
+
+#### ------- Pseudocode ------- ####
+
+    1. Read the size of the array from address 0x10000000.
+    2. Initialize a variable `sum` to 0.
+    3. Set a pointer to the starting address of the array, 0x10000100.
+    4. Loop through the array:
+        a. Read the current element.
+        b. If (the element is even)
+            add it to `sum`
+        c. else:
+            Move to the next element (increment the pointer).
+    5. Write the value of `sum` to address 0x10000004.

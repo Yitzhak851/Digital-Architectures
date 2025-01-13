@@ -4,7 +4,7 @@
 # and writes the result to "sum_addr"
 #-----------------------------------------------------------
 
-
+// switch between $t1  to  $s1 ??
 main:
     addi $s0, 
 

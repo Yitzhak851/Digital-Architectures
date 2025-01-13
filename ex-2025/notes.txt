@@ -1,9 +1,0 @@
-## How to Use the Code ##
-
-1.	Save the pseudocode and the assembly code in appropriate files.
-2.	Assemble the assembly code using nasm: 
-3.	nasm -f elf64 File.asm -o File.o
-4.	Link it: 
-5.	ld File.o -o File
-6.	Run the executable.
-This implementation works for a system using x86-64 architecture and assumes that the addresses provided are accessible within the program's memory map. Let me know if you need further assistance or adjustments!

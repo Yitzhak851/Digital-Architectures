@@ -1,0 +1,79 @@
+Explanation commands (commonly found in MIPS - Microprocessor without Interlocked Pipeline Stages) assembly:
+
+### Summary Table
+
+| **Instruction** | **Operation**                                             |
+|-----------------|-----------------------------------------------------------|
+| `lui`           | Load upper 16 bits of a register with an immediate value. |
+| `lw`            | Load a 32-bit word from memory.                           |
+| `ori`           | Bitwise OR between a register and an immediate value.     |
+| `beq`           | Branch to a label if two registers are equal.             |
+| `add`           | Add two registers.                                        |
+| `addi`          | Add a register and an immediate value.                    |
+| `sw`            | Store a 32-bit word into memory.                          |
+
+
+`lui` (Load Upper Immediate)
+    - **Purpose**: Loads a 16-bit immediate value into the upper 16 bits of a register, setting the lower 16 bits to zero.
+    - **Syntax**: `lui $rt, immediate`
+    - **Example**: `lui $t0, 0x1234`  
+    After execution: `$t0 = 0x12340000`
+    - **Use**: Often used to load a 32-bit constant into a register in conjunction with an `ori` instruction.
+
+`lw` (Load Word)
+    - **Purpose**: Loads a 32-bit word from memory into a register.
+    - **Syntax**: `lw $rt, offset($rs)`
+    - `$rt`: Destination register
+    - `$rs`: Base register
+    - `offset`: Offset added to `$rs` to compute the memory address
+    - **Example**: `lw $t0, 4($sp)`  
+    Loads the word at address `$sp + 4` into `$t0`.
+    - **Use**: Retrieve data from memory.
+
+`ori` (OR Immediate)
+    - **Purpose**: Performs a bitwise OR operation between a register and an immediate value, storing the result in a register.
+    - **Syntax**: `ori $rt, $rs, immediate`
+    - `$rt`: Destination register
+    - `$rs`: Source register
+    - `immediate`: 16-bit immediate value
+    - **Example**: `ori $t0, $t1, 0x00FF`  
+    If `$t1 = 0x12340000`, after execution: `$t0 = 0x123400FF`.
+    - **Use**: Combine with `lui` to construct 32-bit constants or manipulate specific bits.
+
+`beq` (Branch if Equal)
+    - **Purpose**: Branches to a target address if two registers are equal.
+    - **Syntax**: `beq $rs, $rt, offset`
+    - `$rs`, `$rt`: Registers to compare
+    - `offset`: The branch offset (relative to the current instruction)
+    - **Example**: `beq $t0, $t1, Label`  
+    If `$t0 == $t1`, the program jumps to the instruction labeled `Label`.
+    - **Use**: Conditional branching in loops or decision-making.
+
+`add` (Add)
+    - **Purpose**: Adds the values of two registers and stores the result in a register.
+    - **Syntax**: `add $rd, $rs, $rt`
+    - `$rd`: Destination register
+    - `$rs`, `$rt`: Source registers
+    - **Example**: `add $t0, $t1, $t2`  
+    If `$t1 = 5` and `$t2 = 10`, after execution: `$t0 = 15`.
+    - **Use**: Perform integer addition.
+
+`addi` (Add Immediate)
+    - **Purpose**: Adds a register and an immediate value, storing the result in a register.
+    - **Syntax**: `addi $rt, $rs, immediate`
+    - `$rt`: Destination register
+    - `$rs`: Source register
+    - `immediate`: 16-bit constant
+    - **Example**: `addi $t0, $t1, 10`  
+    If `$t1 = 5`, after execution: `$t0 = 15`.
+    - **Use**: Increment or modify register values by a constant.
+
+`sw` (Store Word)
+    - **Purpose**: Stores a 32-bit word from a register into memory.
+    - **Syntax**: `sw $rt, offset($rs)`
+    - `$rt`: Source register
+    - `$rs`: Base register
+    - `offset`: Offset added to `$rs` to compute the memory address
+    - **Example**: `sw $t0, 4($sp)`  
+    Stores the value of `$t0` into the memory address `$sp + 4`.
+    - **Use**: Save data into memory.
