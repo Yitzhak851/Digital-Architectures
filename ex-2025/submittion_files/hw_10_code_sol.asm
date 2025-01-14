@@ -1,25 +1,15 @@
 #----------------------------------------------------------
-# Filename: hw_10_code_sol.asm
-# Description: Sample assembly code program that sums all the even elements in an given array.
-# Creator: Yitzhak Bar or and Alon Cory
-# Editor: Yitzhak Bar or and Alon Cory
+# Description: Program that sums all the even elements in an given array.
+# Creator and Editor: Yitzhak Bar or && Alon Cory
 # Date Created: January 09, 2025
-# Last Edited: January 13, 2025
-# Purpose: Demonstrates including creator/editor info in comments
+# Last Edited: January 14, 2025
 #----------------------------------------------------------
-# Here the data of this program : data-code-block
+# Data-code-block
 #----------------------------------------------------------
 data:
     start_adrs:             .word 0x10000100 # Starting memory address of the array
     arr_size_adrs:          .word 0x10000000 # Memory address holding the array size
     sum_even_values_adrs:   .word 0x10000004 # Memory address to store the sum of even numbers
-#-----------------------------------------------------------
-# Here is the program itself : program-code-block
-# Algorithm:
-# 1. Initialize the array and store it in memory.
-# 2. Load the array size and calculate the sum of even elements in a loop.
-# 3. Skip odd elements using a bitwise check.
-# 4. Store the result at the designated memory address.
 #-----------------------------------------------------------
 main:
     sw $t0, 0x10000000($zero)   # store the word in the location of the array size
@@ -41,4 +31,3 @@ skip_add:
 #-----------------------------------------------------------
 end_loop:
     sw $t2, 0x10000004($zero)   # Store the sum at address 0x10000004
-#-----------------------------------------------------------
